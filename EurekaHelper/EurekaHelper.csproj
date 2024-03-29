@@ -24,16 +24,6 @@
 		<DalamudLibPath>$(DALAMUD_HOME)</DalamudLibPath>
 	</PropertyGroup>
 
-	<Target Name="AddGitSha" BeforeTargets="GetAssemblyVersion" Returns="InformationalVersion">
-		<Exec ConsoleToMsBuild="true" Command="git rev-parse HEAD">
-			<Output TaskParameter="ConsoleOutput" PropertyName="GitSha" />
-		</Exec>
-
-		<PropertyGroup>
-			<InformationalVersion>$(GitSha)</InformationalVersion>
-		</PropertyGroup>
-	</Target>
-
 	<ItemGroup>
 		<PackageReference Include="DalamudPackager" Version="2.1.12" />
 		<PackageReference Include="XivCommon" Version="9.0.0" />
